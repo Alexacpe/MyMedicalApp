@@ -1,11 +1,13 @@
 public class Patient {
-    String name;
-    String email;
-    String address;
-    String phoneNumber;
-    String birthday;
-    double weight;
-    double heidht;
+    //private solo permite que la clase tenga acceso
+    int id;
+    private String name;
+    private String email;
+    private String address;
+    private String phoneNumber;
+    private String birthday;
+    private double weight;
+    private double heidht;
     String blood;
 
     public Patient(String name, String email){
