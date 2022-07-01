@@ -45,4 +45,14 @@ public class Patient extends User{
     public void setBlood(String blood) {
         this.blood = blood;
     }
+
+    @Override
+    public String toString() {
+        //heredo el toString de user para complementar con los atributos de Patient
+        return super.toString()+
+                "birthday='" + birthday + '\n' +
+                ", weight=" + getWeight() +
+                ", heidht=" + getHeidht() +
+                ", blood='" + blood ;
+    }
 }

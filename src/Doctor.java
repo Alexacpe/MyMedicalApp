@@ -71,4 +71,10 @@ public class Doctor extends User {
             this.time = time;
         }
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "speciality='" + speciality;
+    }
 }

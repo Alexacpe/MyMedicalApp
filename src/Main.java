@@ -8,7 +8,7 @@ public class Main {
         //Llamar al menu
         //showMenu();
         //Objeto de tipo doctor Tomando los parametros que se le asigó al metodo constructor
-        Doctor myDoctor = new Doctor("Mariana","Pediatra");
+        Doctor myDoctor = new Doctor("Mariana","mariana@mail.com");
         //System.out.println(myDoctor.name);
         //System.out.println(myDoctor.speciality);
 
@@ -36,6 +36,10 @@ public class Main {
         //patient.weight = 80 ;
         //patient.heidht = 1.74;*/
 
+        Patient patient =new Patient("Alex","alex@mail.com");
+        //imprimo los datos que me trae el metodo toString de User mas los del metodo toString de Patient
+        System.out.println(patient);
+        System.out.println(myDoctor);
          }
 
 }

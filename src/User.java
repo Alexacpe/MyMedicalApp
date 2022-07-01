@@ -57,5 +57,11 @@ public class User {
             this.phoneNumber=phoneNumber;
         }
     }
-
+    //el metodo toString es de la superclase por defecto
+    //sobreescribo el metodo para que imprima los datos que necesito de User
+    @Override //override sirve para sobreeescribir el metodo
+    public String toString(){
+        return "User:" + name + ",Email: "+email+
+        "\n Address: "+address+" Phone: "+phoneNumber;
+    }
 }
