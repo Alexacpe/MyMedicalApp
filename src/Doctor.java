@@ -2,34 +2,24 @@ import java.util.ArrayList;
 import java.util.Date;
 
 //Clase Doctor
-public class Doctor {
-    //Atributos
-    static int id = 0; //autoincrementable
-    private String name;
-    private String email;
+//Utilizo extends para heredar los atributos de la clase padre
+public class Doctor extends User {
+
     private String speciality;
 
-
-    //Constructor
-    public Doctor(){ //Metodo constructor por defecto
-        System.out.println("Construyento un objeto Doctor");
-    }
-    //Constructor con parametro-> recibe como parametro un nombre de doctor y la especialidad
-    Doctor(String name, String speciality){
-        id++; //comportamiento del metodo para generar id autoincrementable
-        System.out.println("El nombre del doctor es: "+ name);
-        //this hace referencia a los elementos que componen esa clase y ese elemento toma el parametro que se recibe en el constructor
-        this.name = name;
-        this.speciality = speciality;
+    //Constructor con parametro-> recibe como parametro un nombre de doctor y el email que fue declarado en la clase padre User
+    Doctor(String name,String email){
+        //super es para usar el constructor de la clase padre
+       super(name,email);
+       this.speciality=speciality;
      }
 
-    //Comportamientos = Metodos
-
-    public void showName(){
-        System.out.println(name);
+    public String getSpeciality() {
+        return speciality;
     }
-    public void showId(){
-        System.out.println();
+
+    public void setSpeciality(String speciality) {
+        this.speciality = speciality;
     }
 
     //coleccion de objetos AvailableAppointment obtenidos de addAvailableAppointment

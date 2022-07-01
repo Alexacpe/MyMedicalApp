@@ -1,10 +1,5 @@
-public class Patient {
-    //private solo permite que la clase tenga acceso(encapsulados)
-    int id;
-    private String name;
-    private String email;
-    private String address;
-    private String phoneNumber;
+public class Patient extends User{
+
     private String birthday;
     private double weight;
     private double heidht;
@@ -12,8 +7,8 @@ public class Patient {
 
     //Metodo constructor con los parametros minimos para Patient pueda ser declarado
     public Patient(String name, String email){
-        this.name=name;
-        this.email=email;
+        //super recibe el metodo contructor del padre
+        super(name, email);
     }
     //darle acceso al dato de la variable
     public void setWeight (double weight){
@@ -29,46 +24,6 @@ public class Patient {
 
     public String setHeidht(double heidht) {
         return this.heidht + "cm.";
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
     }
 
     public String getBirthday() {
