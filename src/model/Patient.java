@@ -1,3 +1,5 @@
+package model;
+
 public class Patient extends User{
 
     private String birthday;
@@ -5,7 +7,7 @@ public class Patient extends User{
     private double heidht;
     private String blood;
 
-    //Metodo constructor con los parametros minimos para Patient pueda ser declarado
+    //Metodo constructor con los parametros minimos para model.Patient pueda ser declarado
     public Patient(String name, String email){
         //super recibe el metodo contructor del padre
         super(name, email);
@@ -48,7 +50,7 @@ public class Patient extends User{
 
     @Override
     public String toString() {
-        //heredo el toString de user para complementar con los atributos de Patient
+        //heredo el toString de user para complementar con los atributos de model.Patient
         return super.toString()+
                 "birthday='" + birthday + '\n' +
                 ", weight=" + getWeight() +

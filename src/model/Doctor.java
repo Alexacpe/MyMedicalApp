@@ -1,14 +1,16 @@
+package model;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-//Clase Doctor
+//Clase model.Doctor
 //Utilizo extends para heredar los atributos de la clase padre
 public class Doctor extends User {
 
     private String speciality;
 
-    //Constructor con parametro-> recibe como parametro un nombre de doctor y el email que fue declarado en la clase padre User
-    Doctor(String name,String email){
+    //Constructor con parametro-> recibe como parametro un nombre de doctor y el email que fue declarado en la clase padre model.User
+    public Doctor(String name,String email){
         //super es para usar el constructor de la clase padre
        super(name,email);
        this.speciality=speciality;
@@ -38,7 +40,7 @@ public class Doctor extends User {
     public String toString() {
         return super.toString()+"\n Speciality:"+speciality+"\nAvailable: "+availableAppointments.toString();//convertir la lista de fechas en un toString para que solo me muestre los datos de las citas
     }
-    //Clase anidada asociada a la logica de la clase Doctor, para asignar citas
+    //Clase anidada asociada a la logica de la clase model.Doctor, para asignar citas
 
     public static class AvailableAppointment{
         //atributos

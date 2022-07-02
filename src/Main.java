@@ -1,6 +1,7 @@
-import java.util.Date;
+import model.Doctor;
+import model.Patient;
 
-import static ui.UIMenu.*;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class Main {
         /*
         //imprimir las citas llamando la clase anidada estatica
 
-        for (Doctor.AvailableAppointment availableAppointment: myDoctor.getAvailableAppointments()) {
+        for (model.Doctor.AvailableAppointment availableAppointment: myDoctor.getAvailableAppointments()) {
             System.out.println(availableAppointment.getDate()+" "+availableAppointment.getTime());
         }
         
@@ -28,16 +29,16 @@ public class Main {
 
 
         //objeto de tipo paciente
-        Patient patient = new Patient("Alex", "alex@mail.com");
+        model.Patient patient = new model.Patient("Alex", "alex@mail.com");
         //ya no se puede acceder a las variables desde acá porque estan private en la clase (encapsulamiento)
         //System.out.println(patient.name);
         //System.out.println(patient.email);
-        //asignar otros datos de la clase Patient que no están como parametros en el objeto
+        //asignar otros datos de la clase model.Patient que no están como parametros en el objeto
         //patient.weight = 80 ;
         //patient.heidht = 1.74;*/
 
         Patient patient =new Patient("Alex","alex@mail.com");
-        //imprimo los datos que me trae el metodo toString de User mas los del metodo toString de Patient
+        //imprimo los datos que me trae el metodo toString de model.User mas los del metodo toString de model.Patient
         System.out.println(patient);
         System.out.println(myDoctor);
          }

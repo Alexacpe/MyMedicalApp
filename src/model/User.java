@@ -1,5 +1,6 @@
+package model;
 
-//Clase padre (Super Clase) que va a heredar atributos en comun que tienen otras clases (Doctor y Patient)
+//Clase padre (Super Clase) que va a heredar atributos en comun que tienen otras clases (model.Doctor y model.Patient)
 public class User {
     private int id;
     private String name;
@@ -58,10 +59,10 @@ public class User {
         }
     }
     //el metodo toString es de la superclase por defecto
-    //sobreescribo el metodo para que imprima los datos que necesito de User
+    //sobreescribo el metodo para que imprima los datos que necesito de model.User
     @Override //override sirve para sobreeescribir el metodo
     public String toString(){
-        return "User:" + name + ",Email: "+email+
+        return "model.User:" + name + ",Email: "+email+
         "\n Address: "+address+" Phone: "+phoneNumber;
     }
 }
