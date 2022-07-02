@@ -33,7 +33,11 @@ public class Doctor extends User {
     public ArrayList<AvailableAppointment> getAvailableAppointments(){
         return availableAppointments;
     }
-
+    //sobreescribir el tostring de la super clase para añadirle comportamiento
+    @Override
+    public String toString() {
+        return super.toString()+"\n Speciality:"+speciality+"\nAvailable: "+availableAppointments.toString();//convertir la lista de fechas en un toString para que solo me muestre los datos de las citas
+    }
     //Clase anidada asociada a la logica de la clase Doctor, para asignar citas
 
     public static class AvailableAppointment{
@@ -70,11 +74,11 @@ public class Doctor extends User {
         public void setTime(String time) {
             this.time = time;
         }
+        @Override
+        public String toString() {
+            return "Avaliable Appointmen \nDate"+date+"\nTime:"+time;
+        }
     }
 
-    @Override
-    public String toString() {
-        return super.toString() +
-                "speciality='" + speciality;
-    }
+
 }

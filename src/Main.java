@@ -16,7 +16,7 @@ public class Main {
         myDoctor.addAvailableAppointment(new Date(),"5pm");
         myDoctor.addAvailableAppointment(new Date(),"7pm");
         myDoctor.addAvailableAppointment(new Date(),"10am");
-        
+        /*
         //imprimir las citas llamando la clase anidada estatica
 
         for (Doctor.AvailableAppointment availableAppointment: myDoctor.getAvailableAppointments()) {
@@ -26,7 +26,7 @@ public class Main {
         //imprimir lista con las citas creadas
         System.out.println(myDoctor.getAvailableAppointments());
 
-        /*
+
         //objeto de tipo paciente
         Patient patient = new Patient("Alex", "alex@mail.com");
         //ya no se puede acceder a las variables desde acá porque estan private en la clase (encapsulamiento)
