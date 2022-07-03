@@ -16,6 +16,8 @@ public class Nurse extends User{
         this.specility = specility;
     }
 
+
+
     @Override
     public void showDataUser() {
         System.out.println("Empleado del Hospital:  Pablo Tobon");

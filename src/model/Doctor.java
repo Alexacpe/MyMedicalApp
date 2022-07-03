@@ -41,12 +41,6 @@ public class Doctor extends User {
         return super.toString()+"\n Speciality:"+speciality+"\nAvailable: "+availableAppointments.toString();//convertir la lista de fechas en un toString para que solo me muestre los datos de las citas
     }
 
-    //metodo abstracto obligatorio de la clase user que es abtracta, le va a dar un comportamiento mas especifico a las clases hijas.
-    @Override
-    public void showDataUser() {
-        System.out.println("Empleado del Hospital: Clinica del norte");
-        System.out.println("Departamento: Pediatria");
-    }
     //Clase anidada asociada a la logica de la clase model.Doctor, para asignar citas
 
     public static class AvailableAppointment{
@@ -87,6 +81,12 @@ public class Doctor extends User {
         public String toString() {
             return "Avaliable Appointmen \nDate"+date+"\nTime:"+time;
         }
+    }
+    //metodo abstracto que viene de la clase padre, es el metodo obligatorio por ser declarado como abstracto en la clase abstracta
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado del Hospital: Clinica del norte");
+        System.out.println("Departamento: Pediatria");
     }
 
 

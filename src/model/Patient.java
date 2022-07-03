@@ -57,7 +57,7 @@ public class Patient extends User{
                 ", heidht=" + getHeidht() +
                 ", blood='" + blood ;
     }
-
+    //metodo abstracto que viene de la clase padre, es el metodo obligatorio por ser declarado como abstracto en la clase abstracta
     @Override
     public void showDataUser() {
         System.out.println("Paciente");

@@ -1,7 +1,7 @@
 package model;
 
 //Clase padre (Super Clase) que va a heredar atributos en comun que tienen otras clases (model.Doctor y model.Patient)
-//se convierte en clase abstracta,ya no puede ser instanciada con comportamientos, ya que los objetos del proyecto son solo doctor y nurse
+//se convierte en clase abstracta,ya no puede ser instanciada con comportamientos, ya que los objetos del proyecto son solo paciente,doctor y nurse
 public abstract class User {
     private int id;
     private String name;
@@ -68,6 +68,6 @@ public abstract class User {
     }
 
     //metodo abstracto de la clase abtracta
-    //traer datos especificos de cada usuario
-    public abstract void showDataUser();
+    //Solo se deja declarado para que las clases hijas que lo heredan le den el comportamiento
+    public abstract void showDataUser();//traer datos especificos de cada usuario
 }
