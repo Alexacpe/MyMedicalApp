@@ -1,5 +1,6 @@
 import model.Doctor;
 import model.Patient;
+import model.User;
 
 import java.util.Date;
 
@@ -37,10 +38,20 @@ public class Main {
         //patient.weight = 80 ;
         //patient.heidht = 1.74;*/
 
+        //no se puede crear entidades de User porque es abstracta, pero si de las clases hijas
+        User user = new Doctor("Alex","alex@mail.com"); //el objeto de tipo User toma la forma que le da doctor
+        user.showDataUser();
+        User userPatient = new Patient("CArla","car@mail.com");//User toma la forma de paciente
+        userPatient.showDataUser();
+
         Patient patient =new Patient("Alex","alex@mail.com");
         //imprimo los datos que me trae el metodo toString de model.User mas los del metodo toString de model.Patient
-        System.out.println(patient);
+
         System.out.println(myDoctor);
-         }
+
+
+
+
+    }
 
 }

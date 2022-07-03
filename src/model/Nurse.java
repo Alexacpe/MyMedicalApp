@@ -15,4 +15,10 @@ public class Nurse extends User{
     public void setSpecility(String specility) {
         this.specility = specility;
     }
+
+    @Override
+    public void showDataUser() {
+        System.out.println("Empleado del Hospital:  Pablo Tobon");
+        System.out.println("Departamento: Cruz Roja, Pablo Tobon, Antioquia");
+    }
 }
