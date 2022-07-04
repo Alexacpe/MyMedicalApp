@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class UIMenu {
         //variable constante con la palabra final asi no podrá ser reasignada
-        public static String [] MONTHS = {"Enero", "Febrero", "Marzo", "Abril","Mayo","Junio"};
+        public static final String [] MONTHS = {"Enero", "Febrero", "Marzo", "Abril","Mayo","Junio"};
         //variable para obtener el doctor logeado
         public static Doctor doctorLogged;
         //variable para obtener el doctor logeado
@@ -78,6 +78,7 @@ public class UIMenu {
                             //obtener el usuario logueado
                             doctorLogged = d;
                             //mostrar el menu del doctor
+                            UIDoctorMenu.showDoctorMenu();
                         }
                     }
                 }
@@ -125,6 +126,12 @@ public class UIMenu {
                 }
             }while (response != 0);
         }
+
+        /*public static void menuOption(){
+            int response = 0;
+            Scanner sc = new Scanner(System.in);
+            response = Integer.valueOf(sc.nextLine());
+        }*/
 
     }
 
