@@ -49,9 +49,17 @@ public class Main {
 
         System.out.println(myDoctor);
 
-
-
-
+        //Aplicar clases anonimas (forma de instraciar una clase abstracta sin necesidad de que sea por la clase hija)
+        //el comportamiento de la clase anonima no se mantiene ni se puede heredar solo sirve para un momento
+        User user1 = new User("Gero","gero@gero.com") {
+            @Override
+            public void showDataUser() {// se toma el unico metodo abstracto de la clase padre y se sobreescribe para darle comportamiento
+                System.out.println("Doctor \n");
+                System.out.println("Hostpital: Clipo\n");
+                System.out.println("Nutricionista");
+            }
+        };
+        user1.showDataUser();
     }
 
 }
