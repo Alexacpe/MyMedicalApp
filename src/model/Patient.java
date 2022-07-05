@@ -1,11 +1,26 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Patient extends User{
 
     private String birthday;
     private double weight;
     private double heidht;
     private String blood;
+     //lista donde se guardan las citas que ejecuta el paciente
+    private ArrayList<AppointmentDoctor> appointmentDoctors = new ArrayList<>();
+
+    public ArrayList<AppointmentDoctor> getAppointmentDoctors() {
+        return appointmentDoctors;
+    }
+
+    public void addAppointmentDoctors(Doctor doctor, Date date,String time) {
+        AppointmentDoctor appointmentDoctor = new AppointmentDoctor(this, doctor);
+        appointmentDoctor.schedule(date,time);
+        appointmentDoctors.add(appointmentDoctor);
+    }
 
     //Metodo constructor con los parametros minimos para model.Patient pueda ser declarado
     public Patient(String name, String email){
