@@ -29,7 +29,7 @@ public class UIMenu {
 
                 switch (response){
                     case 1:
-                        System.out.println("model.Doctor");
+                        System.out.println("Doctor");
                         //implementa autenticacion si es doctor con la opcion 1 (parametro)
                         authUser(1);//asigno el parametro que solicita el metodo
                         break;
@@ -50,7 +50,7 @@ public class UIMenu {
         //menu de autenticacion
 
         private static void authUser(int userType){
-            //userType = 1 Es Poctor
+            //userType = 1 Es Doctor
             //userType = 2 es Paciente
             ArrayList<Doctor> doctors = new ArrayList<>();
             doctors.add(new Doctor("Primer doctor","primer@mail.com"));

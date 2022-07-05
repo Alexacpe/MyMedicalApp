@@ -15,7 +15,7 @@ public class UIDoctorMenu {
         do {
             System.out.println("\n\n");
             System.out.println("Doctor");
-            System.out.println("Welcome Dcoctor" + UIMenu.doctorLogged);//doctorLogged del menu de logeo
+            System.out.println("Welcome Doctor" + UIMenu.doctorLogged);//doctorLogged del menu de logeo
             System.out.println("1. Add Available Appointments");
             System.out.println("2. My Scheduled appointments");
             System.out.println("0. Logout");
@@ -26,7 +26,7 @@ public class UIDoctorMenu {
             //evaluar los casos
             switch (response){
                 case 1:
-                    break;
+                    showAddAvailableAppointmentMenu();
                 case 2:
                     break;
                 case 0:
@@ -37,7 +37,7 @@ public class UIDoctorMenu {
         }while (response != 0);
     }
 
-    private static void showAddAvailableAppointment(){
+    private static void showAddAvailableAppointmentMenu(){
         int response = 0;
         do {
             System.out.println();
@@ -47,17 +47,18 @@ public class UIDoctorMenu {
             for (int i = 0; i < 3; i++) {
                 //variable temporal j solo para numerar los meses
                 int j = i + 1;
-                System.out.println(j+"."+UIMenu.MONTHS[i]);//numerar los meses
-                System.out.println("Return");
+                System.out.println(j + "." + UIMenu.MONTHS[i]);//numerar los meses
+                }
+                System.out.println("0. Return");
 
                 Scanner sc = new Scanner(System.in);
                 response = Integer.valueOf(sc.nextLine());
 
-                if (response < 0 && response > 4){
+                if (response > 0 && response < 4){
                     //tomar el mes seleccionado 1,2 o 3
                     int monthSelected = response;
                     System.out.println(monthSelected + "."+UIMenu.MONTHS[monthSelected]);//muestra el mes seleccionado
-                    System.out.println("Insert the date available: [dd/MM/yy");
+                    System.out.println("Insert the date available: [dd/MM/yy]");
                     String date = sc.nextLine(); //se reutiliza la variable creada en scanner
 
                     System.out.println("Your date selected is: "+ date + "\n 1. Correct \n2. Change Date");
@@ -68,7 +69,7 @@ public class UIDoctorMenu {
                     int responseTime=0;
                     String time = ""; //para capturar la hora
                         do {
-                            System.out.println("Insert the time available for date: "+ date + "16:00");
+                            System.out.println("Insert the time available for date: "+ date + " [16:00]");
                             time = sc.nextLine();
                             System.out.println("Your time selected is: "+ time + "\n 1. Correct \n2. Change Time");
                             responseTime = Integer.valueOf(sc.nextLine());
@@ -81,9 +82,9 @@ public class UIDoctorMenu {
                 }else if (response == 0){
                     showDoctorMenu();
                 }
-            }
-        }while (response !=0);
-    }
+            }while (response !=0);
+        }
+
 
     private static void checkDoctorAvailableAppointments (Doctor doctor){
         //si el doctor si tiene citas y si el doctor no existe, agregarlo

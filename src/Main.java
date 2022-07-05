@@ -4,21 +4,23 @@ import model.User;
 
 import java.util.Date;
 
+import static ui.UIMenu.showMenu;
+
 public class Main {
     public static void main(String[] args) {
 
         //Llamar al menu
-        //showMenu();
+        showMenu();
         //Objeto de tipo doctor Tomando los parametros que se le asigó al metodo constructor
-        Doctor myDoctor = new Doctor("Mariana","mariana@mail.com");
+        //Doctor myDoctor = new Doctor("Mariana","mariana@mail.com");
         //System.out.println(myDoctor.name);
         //System.out.println(myDoctor.speciality);
 
-        //Añadir nuevas citas a Mariana
+        /*Añadir nuevas citas a Mariana
         myDoctor.addAvailableAppointment(new Date(),"5pm");
         myDoctor.addAvailableAppointment(new Date(),"7pm");
         myDoctor.addAvailableAppointment(new Date(),"10am");
-        /*
+
         //imprimir las citas llamando la clase anidada estatica
 
         for (model.Doctor.AvailableAppointment availableAppointment: myDoctor.getAvailableAppointments()) {
@@ -38,7 +40,7 @@ public class Main {
         //patient.weight = 80 ;
         //patient.heidht = 1.74;*/
 
-        //no se puede crear entidades de User porque es abstracta, pero si de las clases hijas
+        /*no se puede crear entidades de User porque es abstracta, pero si de las clases hijas
         User user = new Doctor("Alex","alex@mail.com"); //el objeto de tipo User toma la forma que le da doctor
         user.showDataUser();
         User userPatient = new Patient("CArla","car@mail.com");//User toma la forma de paciente
@@ -59,7 +61,7 @@ public class Main {
                 System.out.println("Nutricionista");
             }
         };
-        user1.showDataUser();
+        user1.showDataUser();*/
     }
 
 }
