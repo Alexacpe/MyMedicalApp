@@ -89,6 +89,7 @@ public class UIMenu {
                             emailCorrect = true;
                             patientLogged=p;
                             //mostrar el menu del paciente
+                            UIPatientMenu.showPatientMenu();
                         }
                     }
                 }
