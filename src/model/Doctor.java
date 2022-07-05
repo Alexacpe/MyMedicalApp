@@ -1,7 +1,10 @@
 package model;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.SimpleFormatter;
 
 //Clase model.Doctor
 //Utilizo extends para heredar los atributos de la clase padre
@@ -27,7 +30,7 @@ public class Doctor extends User {
     //coleccion de objetos AvailableAppointment obtenidos de addAvailableAppointment
     ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
     //metodo de la clase que agrega citas al doctor, recibe como parametro fecha y hora
-    public  void addAvailableAppointment(Date date, String time){
+    public  void addAvailableAppointment(String date, String time){
         //cada que se añade una cita se declara un nuevo objeto de AvailableAppointment con los parametros date y time
         availableAppointments.add(new Doctor.AvailableAppointment(date,time));
     }
@@ -48,9 +51,14 @@ public class Doctor extends User {
         private int id;
         private Date date;
         private String time;
+        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");//para formatear de string a date
 
-        public AvailableAppointment(Date date, String time) {
-            this.date = date;
+        public AvailableAppointment(String date, String time) {
+            try {
+                this.date = format.parse(date);//toma un string y lo pasa a date.
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
             this.time = time;
         }
 
@@ -64,6 +72,10 @@ public class Doctor extends User {
 
         public Date getDate() {
             return date;
+        }
+        //UN get date que me trae un string
+        public String getDate(String DATE) {
+            return format.format(date);
         }
 
         public void setDate(Date date) {

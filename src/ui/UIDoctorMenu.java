@@ -1,8 +1,14 @@
 package ui;
 
+import model.Doctor;
+
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 public class UIDoctorMenu {
+    //lista para los doctores que tienen citas disponibles
+    public static ArrayList<Doctor> doctorsAvailableAppointments = new ArrayList<>();
     //metodo para mostrar el menu del doctor logeado
     public static void showDoctorMenu(){
         int response = 0;
@@ -55,6 +61,22 @@ public class UIDoctorMenu {
                     String date = sc.nextLine(); //se reutiliza la variable creada en scanner
 
                     System.out.println("Your date selected is: "+ date + "\n 1. Correct \n2. Change Date");
+                    //validar si la respuesta es correcta
+                    int responseDate = Integer.valueOf(sc.nextLine());
+                    if (responseDate == 2)continue; //continue no continua sino que repite el ciclo
+
+                    int responseTime=0;
+                    String time = ""; //para capturar la hora
+                        do {
+                            System.out.println("Insert the time available for date: "+ date + "16:00");
+                            time = sc.nextLine();
+                            System.out.println("Your time selected is: "+ time + "\n 1. Correct \n2. Change Time");
+                            responseTime = Integer.valueOf(sc.nextLine());
+                        }while (responseTime == 2);
+
+                        //asignacion de la fecha
+                        UIMenu.doctorLogged.addAvailableAppointment(date, time);
+                        checkDoctorAvailableAppointments(UIMenu.doctorLogged);//le paso al doctor logeado con el metodo checkDoctorAvailableAppointments
 
                 }else if (response == 0){
                     showDoctorMenu();
@@ -62,4 +84,13 @@ public class UIDoctorMenu {
             }
         }while (response !=0);
     }
+
+    private static void checkDoctorAvailableAppointments (Doctor doctor){
+        //si el doctor si tiene citas y si el doctor no existe, agregarlo
+        if (doctor.getAvailableAppointments().size() > 0
+            && !doctorsAvailableAppointments.contains(doctor)) {
+                doctorsAvailableAppointments.add(doctor);
+        }
+    }
+
 }
